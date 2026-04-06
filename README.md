@@ -7,7 +7,11 @@
 The app helps users track their health, detect abnormalities early, and manage medical appointments efficiently.
 
 ---
-You can view the demo here: https://drive.google.com/drive/folders/13DQRLK6LZ79PeBUHe1kx36n4O5W0Kfdw?usp=sharing
+## 🎥 Demo
+[Watch Demo Video](https://drive.google.com/drive/folders/13DQRLK6LZ79PeBUHe1kx36n4O5W0Kfdw)
+## 🤖 Backend Deployment
+[Base URL](https://github.com/LuuYenVy/Heart-AI-API)
+
 ---
 
 ## 🚀 Features
@@ -88,12 +92,13 @@ User Interaction (UI)
 
 ## 📷 Screenshots
 
-> *(Add your app screenshots here)*
-
-* Login Screen
-* Dashboard
-* Heart Rate Chart
-* Prediction Result
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2a07b750-20ad-4d37-bafc-b4868e1f46ee" width="22%">
+  <img src="https://github.com/user-attachments/assets/01969e82-0ec1-42d0-96d9-210107484dd8" width="22%">
+  <img src="https://github.com/user-attachments/assets/7e4d8f91-1141-4e67-9840-a2da3bac8166" width="22%">
+  <img src="https://github.com/user-attachments/assets/62f8f0c2-d1e8-4c1f-9adb-62a1c617378f" width="22%">
+</p>
+<p align="center"><i>Login • Chart • Appointment Manager • AI Assistant</i></p>
 
 ---
 
@@ -169,12 +174,6 @@ python -m uvicorn main:app --reload
 
 ---
 
-## 👤 Author
-
-* GitHub: https://github.com/your-username
-* TikTok: https://www.tiktok.com/@umaru9195
-
----
 
 ## ⭐ Acknowledgements
 
