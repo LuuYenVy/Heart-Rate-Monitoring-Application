@@ -10,4 +10,5 @@ public class AIRequest {
         this.heartRate = heartRate;
         this.question = question;
     }
+
 }

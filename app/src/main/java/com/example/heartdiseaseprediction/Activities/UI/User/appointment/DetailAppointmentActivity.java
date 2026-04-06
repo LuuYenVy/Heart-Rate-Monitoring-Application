@@ -117,7 +117,7 @@ public class DetailAppointmentActivity extends AppCompatActivity {
 
     private void bindDetail(Appointment ap) {
         symptom.setText(ap.getSypptom());
-        medicalhistory.setText(ap.getMedical_history());
+        medicalhistory.setText(ap.getMedicalHistory());
         diagnostic.setText(ap.getDiagnostic());
 
         SharedPreferences.Editor editor =

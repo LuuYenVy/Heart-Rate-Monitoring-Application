@@ -41,7 +41,7 @@ public class AppointmentSessionManager {
         editor.putString(KEY_USERID_STATUS, appointment.getUserid_status());
         editor.putString(KEY_TEMPERATURE, appointment.getTemperature());
         editor.putString(KEY_BLOOD_PRESSURE, appointment.getBlood_pressure());
-        editor.putString(KEY_MEDICAL_HISTORY, appointment.getMedical_history());
+        editor.putString(KEY_MEDICAL_HISTORY, appointment.getMedicalHistory());
         editor.putString(KEY_DIAGNOSTIC, appointment.getDiagnostic());
         editor.apply();
     }

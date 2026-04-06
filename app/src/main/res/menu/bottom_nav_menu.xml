@@ -17,6 +17,11 @@
         android:icon="@drawable/historyicon"
         />
     <item
+        android:id="@+id/chart_AI"
+        android:title="AI assistant"
+        android:icon="@drawable/message"
+        />
+    <item
         android:id="@+id/user"
         android:title="User"
         android:icon="@drawable/usericon"

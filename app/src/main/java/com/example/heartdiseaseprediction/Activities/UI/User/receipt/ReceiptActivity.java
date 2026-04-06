@@ -40,15 +40,13 @@ public class ReceiptActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.ButtonBack);
 
         ScrollView scrollView = findViewById(R.id.scrollViewdrug);
-        container = new LinearLayout(this);
-        container.setOrientation(LinearLayout.VERTICAL);
-        scrollView.addView(container);
 
-        // Doctor name
+        container = findViewById(R.id.container_drug);
+
+
         SharedPreferences doctorPrefs = getSharedPreferences("DoctorPrefs", MODE_PRIVATE);
         doctorName.setText(doctorPrefs.getString("DoctorName", "Doctor"));
 
-        // Appointment ID
         SharedPreferences prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String appointmentId = prefs.getString("AppointmentKey", "");
 

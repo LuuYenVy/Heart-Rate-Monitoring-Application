@@ -67,7 +67,6 @@ public class AdminDetailAppointmentActivity extends AppCompatActivity {
             }
         });
 
-        // User
         viewModel.getUser().observe(this, user -> {
             if (user != null) {
                 weight.setText(user.getWeight());

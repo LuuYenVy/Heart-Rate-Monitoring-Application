@@ -86,7 +86,7 @@
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusBottomStart="9dp"
             app:boxCornerRadiusBottomEnd="9dp"
-            android:hint="@string/hintuser"
+            android:hint="Email"
             android:textColorHint="@color/textColorHint"
             app:cursorColor="@color/colorSencondPrimary"
             app:boxStrokeColor="@color/colorPrimary"

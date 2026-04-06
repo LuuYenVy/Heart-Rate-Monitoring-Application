@@ -23,8 +23,8 @@
                 android:id="@+id/input"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:hint="Nhập câu hỏi..."
-                android:layout_height="60dp"/>
+                android:hint="Make a question about your HeartBeat..."
+                android:layout_height="90dp"/>
 
             <Button
                 android:id="@+id/sendButton"

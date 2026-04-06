@@ -13,9 +13,9 @@ public class Appointment {
     private String userid_status;
     private String temperature;
     private String blood_pressure;
-    private String medical_history;
-    private String diagnostic;
-    private String sypptom;
+    private String MedicalHistory ;
+    private String Diagnostic;
+    private String Sypptom;
     public Appointment() {
     }
 
@@ -36,8 +36,8 @@ public class Appointment {
         this.userid_status=userid_status;
         this.temperature=temperature;
         this.blood_pressure=blood_pressure;
-        this.medical_history=medical_history;
-        this.diagnostic=diagnostic;
+        this.MedicalHistory=medical_history;
+        this.Diagnostic=diagnostic;
 
     }
 
@@ -130,27 +130,27 @@ public class Appointment {
     public void setBlood_pressure (String blood_pressure ) {
         this.blood_pressure  = blood_pressure ;
     }
-    public String getMedical_history () {
-        return medical_history ;
+    public String getMedicalHistory () {
+        return MedicalHistory ;
     }
 
-    public void setMedical_history (String medical_history ) {
-        this.medical_history  = medical_history ;
+    public void setMedicalHistory(String medical_history ) {
+        this.MedicalHistory  = medical_history ;
     }
     public String getDiagnostic () {
-        return diagnostic ;
+        return Diagnostic ;
     }
 
     public void setDiagnostic (String diagnostic ) {
-        this.diagnostic  = diagnostic ;
+        this.Diagnostic  = diagnostic ;
     }
 
     public String getSypptom () {
-        return sypptom ;
+        return Sypptom ;
     }
 
     public void setSypptom (String sypptom ) {
-        this.sypptom  = sypptom ;
+        this.Sypptom  = sypptom ;
     }
 
 

@@ -13,5 +13,12 @@ public class HeartResult {
 
     public String getBeat() { return beat; }
     public String getTime() { return time; }
-    public boolean isDanger() { return isDanger; }
+    public boolean isDanger() { try {
+        int bpm = Integer.parseInt(beat);
+
+        return bpm < 50 || bpm > 120;
+    } catch (NumberFormatException e) {
+        return false;
+    }
+    }
 }

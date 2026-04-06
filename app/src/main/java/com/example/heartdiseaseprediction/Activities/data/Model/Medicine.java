@@ -5,14 +5,14 @@ public class Medicine {
     private String routine;
     private String amount;
 
-    // Constructor
+
+    public Medicine(){}
     public Medicine(String name, String routine, String amount) {
         this.name = name;
         this.routine = routine;
         this.amount = amount;
     }
 
-    // Getter và Setter cho name
     public String getName() {
         return name;
     }
@@ -21,7 +21,6 @@ public class Medicine {
         this.name = name;
     }
 
-    // Getter và Setter cho routine
     public String getRoutine() {
         return routine;
     }
@@ -30,7 +29,6 @@ public class Medicine {
         this.routine = routine;
     }
 
-    // Getter và Setter cho amount
     public String getAmount() {
         return amount;
     }

@@ -1,7 +1,6 @@
 package com.example.heartdiseaseprediction.Activities.UI.Splash;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -26,6 +25,10 @@ public class SplashViewModel extends ViewModel {
     public void checkUser(Context context) {
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            navigateTo.setValue(LoginActivity.class);
+            return;
+        }
         DatabaseReference ref = FirebaseDatabase.getInstance()
                 .getReference("users")
                 .child(currentUser.getUid());

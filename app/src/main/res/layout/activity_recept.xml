@@ -54,7 +54,7 @@
         android:layout_width="386dp"
         android:layout_height="30dp"
         android:fontFamily="@font/inter_black"
-        android:text="Recept"
+        android:text="Receipt"
         android:textColor="#092C2C"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -78,7 +78,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UIT Hospital"
+            android:text="Hospital"
             android:fontFamily="@font/poppinsmedium"
             android:gravity="center"/>
         <TextView

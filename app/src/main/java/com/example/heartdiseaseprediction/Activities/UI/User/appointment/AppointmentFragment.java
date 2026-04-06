@@ -1,6 +1,5 @@
 package com.example.heartdiseaseprediction.Activities.UI.User.appointment;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +24,7 @@ import java.util.List;
 
 public class AppointmentFragment extends Fragment {
 
-    private CardView layoutHistory, layoutIncoming;
+    private LinearLayout layoutHistoryContainer, layoutIncomingContainer;
     ImageView btnMakeAppointment;
     private AppointmentViewModel viewModel;
     private String userId;
@@ -34,8 +33,8 @@ public class AppointmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_appointment, container, false);
-        layoutHistory = view.findViewById(R.id.History);
-        layoutIncoming = view.findViewById(R.id.upcoming);
+        layoutHistoryContainer = view.findViewById(R.id.layoutHistoryContainer);
+        layoutIncomingContainer = view.findViewById(R.id.layoutIncomingContainer);
         ImageView btnMakeAppointment = view.findViewById(R.id.makeApointment);
 
         btnMakeAppointment.setOnClickListener(v -> {
@@ -50,7 +49,6 @@ public class AppointmentFragment extends Fragment {
             return view;
         }
 
-        // ViewModel
         viewModel = new ViewModelProvider(this).get(AppointmentViewModel.class);
 
         observeData();
@@ -59,7 +57,6 @@ public class AppointmentFragment extends Fragment {
         return view;
     }
 
-    // ================== OBSERVE ==================
     private void observeData() {
 
         viewModel.getHistory().observe(getViewLifecycleOwner(), list -> {
@@ -71,15 +68,14 @@ public class AppointmentFragment extends Fragment {
         });
     }
 
-    // ================== RENDER HISTORY ==================
     private void renderHistory(List<Appointment> list) {
 
-        layoutHistory.removeAllViews();
+        layoutHistoryContainer.removeAllViews();
 
         for (Appointment item : list) {
 
             View v = LayoutInflater.from(getContext())
-                    .inflate(R.layout.item_appointment_history, layoutHistory, false);
+                    .inflate(R.layout.item_appointment_history, layoutHistoryContainer, false);
 
             TextView tvService = v.findViewById(R.id.servicename);
             TextView tvDate = v.findViewById(R.id.date);
@@ -89,19 +85,18 @@ public class AppointmentFragment extends Fragment {
 
             v.setOnClickListener(view -> goToDetail(item));
 
-            layoutHistory.addView(v);
+            layoutHistoryContainer.addView(v);
         }
     }
 
-    // ================== RENDER INCOMING ==================
     private void renderIncoming(List<Appointment> list) {
 
-        layoutIncoming.removeAllViews();
+        layoutIncomingContainer.removeAllViews();
 
         for (Appointment item : list) {
 
             View v = LayoutInflater.from(getContext())
-                    .inflate(R.layout.item_appointment_incoming, layoutIncoming, false);
+                    .inflate(R.layout.item_appointment_incoming, layoutIncomingContainer, false);
 
             TextView tvService = v.findViewById(R.id.Serive);
             TextView tvDate = v.findViewById(R.id.dateservice);
@@ -111,11 +106,10 @@ public class AppointmentFragment extends Fragment {
 
             v.setOnClickListener(view -> goToDetail(item));
 
-            layoutIncoming.addView(v);
+            layoutIncomingContainer.addView(v);
         }
     }
 
-    // ================== NAVIGATION ==================
     private void goToDetail(Appointment item) {
 
         SharedPreferences sp = requireContext()

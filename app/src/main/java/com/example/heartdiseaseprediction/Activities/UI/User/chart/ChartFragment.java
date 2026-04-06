@@ -1,6 +1,9 @@
 package com.example.heartdiseaseprediction.Activities.UI.User.chart;
 
 import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -16,13 +19,19 @@ import android.widget.Toast;
 import java.util.Calendar;
 import com.example.heartdiseaseprediction.R;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.google.firebase.auth.FirebaseAuth;
 public class ChartFragment extends Fragment {
 
-    private BarChart barChart;
+    private LineChart LineChart;
     private TextView tvDate;
     private ImageView btnPickDate;
 
@@ -37,7 +46,7 @@ public class ChartFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_chart, container, false);
 
-        barChart = view.findViewById(R.id.bar_chart);
+        LineChart = view.findViewById(R.id.line_chart);
         tvDate = view.findViewById(R.id.date);
         btnPickDate = view.findViewById(R.id.dateicon);
 
@@ -74,16 +83,41 @@ public class ChartFragment extends Fragment {
         });
     }
 
-    private void renderChart(List<BarEntry> entries) {
-        BarDataSet dataSet = new BarDataSet(entries, "Heart Beat");
-        dataSet.setColor(Color.rgb(50,151,168));
-        dataSet.setValueTextColor(Color.BLACK);
-        dataSet.setValueTextSize(14f);
+    private void renderChart(List<Entry> entries) {
 
-        BarData data = new BarData(dataSet);
-        barChart.setData(data);
-        barChart.getDescription().setEnabled(false);
-        barChart.invalidate();
+        Collections.sort(entries, (a, b) -> Float.compare(a.getX(), b.getX()));
+
+        LineDataSet dataSet = new LineDataSet(entries, "Heart Rate");
+
+        dataSet.setColor(Color.rgb(50,151,168));
+        dataSet.setCircleColor(Color.RED);
+        dataSet.setLineWidth(2f);
+        dataSet.setCircleRadius(4f);
+
+        LineData data = new LineData(dataSet);
+
+        LineChart.setData(data);
+
+        LineChart.getDescription().setEnabled(false);
+
+        XAxis xAxis = LineChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(0.5f);
+
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                int hour = (int) value;
+                int minute = (int) ((value - hour) * 60);
+                return String.format("%02d:%02d", hour, minute);
+            }
+        });
+
+        LineChart.animateX(1000);
+        LineChart.setTouchEnabled(true);
+        LineChart.setPinchZoom(true);
+
+        LineChart.invalidate();
     }
 
     private void showDatePicker() {

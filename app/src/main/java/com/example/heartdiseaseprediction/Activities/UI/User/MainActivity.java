@@ -5,18 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.heartdiseaseprediction.Activities.UI.User.chatbot.ChatFragment;
+import com.example.heartdiseaseprediction.Activities.UI.User.profile.ProfileFragment;
 import com.example.heartdiseaseprediction.R;
 import com.example.heartdiseaseprediction.databinding.ActivityMainScreenBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import com.example.heartdiseaseprediction.Activities.UI.User.home.HomeFragment;
 import com.example.heartdiseaseprediction.Activities.UI.User.chart.ChartFragment;
 import com.example.heartdiseaseprediction.Activities.UI.User.appointment.AppointmentFragment;
-import com.example.heartdiseaseprediction.Activities.UI.User.profile.ProfileFragment;
-import com.example.heartdiseaseprediction.R;
+
 public class MainActivity extends AppCompatActivity {
 
         private ActivityMainScreenBinding binding;
@@ -46,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 else if( id == R.id.history){
                     replaceFragment(new AppointmentFragment());
                 }
-                else {
+                else if( id == R.id.chart_AI){
                     replaceFragment(new ChatFragment());
+                }
+                else {
+                    replaceFragment(new ProfileFragment());
                 }
                 return true;
             });
