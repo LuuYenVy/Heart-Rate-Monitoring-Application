@@ -7,7 +7,7 @@
 The app helps users track their health, detect abnormalities early, and manage medical appointments efficiently.
 
 ---
-You can view the demo here:
+You can view the demo here: https://drive.google.com/drive/folders/13DQRLK6LZ79PeBUHe1kx36n4O5W0Kfdw?usp=sharing
 ---
 
 ## 🚀 Features
@@ -38,7 +38,7 @@ You can view the demo here:
 
 * Python (FastAPI)
 * RESTful API
-* Machine Learning model (for prediction)
+* OpenAI API (AI chatbot for personalized health advice)
 
 ### 🧰 Tools
 
